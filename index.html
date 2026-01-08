@@ -65,6 +65,32 @@ max-width:1200px;
 display:flex;
 flex-direction:column;
 gap:35px;
+position:relative; /* IMPORTANT */
+}
+
+/* TREE LINES */
+.tree-lines{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:0;
+pointer-events:none;
+}
+
+.tree-lines path{
+stroke:#00f2ff;
+stroke-width:3;
+fill:none;
+stroke-dasharray:1000;
+stroke-dashoffset:1000;
+animation:drawLine 4s ease forwards;
+filter:drop-shadow(0 0 6px #00f2ff);
+}
+
+@keyframes drawLine{
+to{stroke-dashoffset:0}
 }
 
 /* BOX */
@@ -75,6 +101,7 @@ border-radius:30px;
 padding:50px 25px 30px;
 box-shadow:0 0 50px rgba(0,255,255,.3);
 position:relative;
+z-index:2;
 }
 
 .box-title{
@@ -184,6 +211,25 @@ text-align:center;
 <div class="family-title">❤️ BANSAL FAMILY ❤️</div>
 
 <div class="wrapper">
+
+<!-- TREE LINES SVG -->
+<svg class="tree-lines" viewBox="0 0 1200 900" preserveAspectRatio="none">
+  <!-- Top to BADE LOG -->
+  <path d="M600 40 V120" />
+
+  <!-- BADE LOG to Sons -->
+  <path d="M300 120 V250" />
+  <path d="M600 120 V250" />
+  <path d="M900 120 V250" />
+
+  <!-- Sons to DIL -->
+  <path d="M300 250 V380" />
+  <path d="M600 250 V380" />
+  <path d="M900 250 V380" />
+
+  <!-- Adults to CHOTE LOG -->
+  <path d="M600 380 V540" />
+</svg>
 
 <!-- BADE LOG -->
 <div class="box">
