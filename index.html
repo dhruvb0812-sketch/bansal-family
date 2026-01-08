@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bansal Family • Dhruv</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+
+body{
+min-height:100vh;
+background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#000);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
+display:flex;
+justify-content:center;
+color:white;
+}
+@keyframes bg{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+/* TOP TEXT */
+.madeby{
+position:fixed;
+top:10px;
+width:100%;
+text-align:center;
+color:#00f2ff;
+letter-spacing:2px;
+font-weight:600;
+z-index:100;
+}
+
+/* PAGE WRAP */
+.page{
+width:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
+padding-top:70px;
+}
+
+/* FAMILY TITLE BOX */
+.family-title{
+margin:20px 0 30px;
+padding:15px 40px;
+border-radius:40px;
+background:rgba(255,255,255,0.1);
+border:2px solid #00f2ff;
+box-shadow:0 0 35px rgba(0,255,255,.6);
+font-size:22px;
+font-weight:700;
+color:#00f2ff;
+letter-spacing:2px;
+}
+
+/* MAIN WRAPPER */
+.wrapper{
+width:95%;
+max-width:1200px;
+display:flex;
+flex-direction:column;
+gap:35px;
+}
+
+/* BOX */
+.box{
+background:rgba(255,255,255,0.07);
+backdrop-filter:blur(15px);
+border-radius:30px;
+padding:50px 25px 30px;
+box-shadow:0 0 50px rgba(0,255,255,.3);
+position:relative;
+}
+
+.box-title{
+position:absolute;
+top:15px;
+left:25px;
+font-size:22px;
+font-weight:700;
+color:#00f2ff;
+}
+
+.section{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:18px;
+margin-top:20px;
+}
+
+button{
+width:135px;
+height:115px;
+border-radius:25px;
+background:rgba(255,255,255,.1);
+border:2px solid #00f2ff;
+color:white;
+cursor:pointer;
+font-size:15px;
+transition:.35s;
+box-shadow:0 0 20px rgba(0,255,255,.5);
+}
+button:hover{
+transform:scale(1.12);
+box-shadow:0 0 40px #00f2ff;
+}
+
+/* MODAL */
+.modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.65);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:50;
+}
+
+.profile{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+border-radius:25px;
+padding:25px;
+max-width:720px;
+width:90%;
+display:flex;
+gap:25px;
+animation:pop .4s ease;
+box-shadow:0 0 50px rgba(0,255,255,.5);
+}
+@keyframes pop{
+from{transform:scale(.6);opacity:0}
+to{transform:scale(1);opacity:1}
+}
+
+.profile img{
+width:220px;
+height:220px;
+border-radius:20px;
+object-fit:cover;
+border:3px solid #00f2ff;
+}
+
+.details h2{color:#00f2ff}
+.details p{margin-top:10px;font-size:17px}
+
+.close{
+position:absolute;
+top:20px;
+right:30px;
+font-size:30px;
+cursor:pointer;
+color:#00f2ff;
+}
+
+/* THANK YOU */
+.thankyou{
+margin:40px 0 25px;
+font-size:22px;
+letter-spacing:2px;
+color:#00f2ff;
+text-align:center;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.profile{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+
+<body>
+
+<div class="madeby">MADE BY DHRUV ❤️</div>
+
+<div class="page">
+
+<div class="family-title">❤️ BANSAL FAMILY ❤️</div>
+
+<div class="wrapper">
+
+<!-- BADE LOG -->
+<div class="box">
+<div class="box-title">BADE LOG</div>
+
+<div class="section">
+<button onclick="openP('geeta')">Home Minister</button>
+</div>
+
+<div class="section">
+<button onclick="openP('lalitesh')">1st Son</button>
+<button onclick="openP('manish')">2nd Son</button>
+<button onclick="openP('lokesh')">3rd Son</button>
+</div>
+
+<div class="section">
+<button onclick="openP('jyoti')">1st DIL</button>
+<button onclick="openP('taruna')">2nd DIL</button>
+<button onclick="openP('sonali')">3rd DIL</button>
+</div>
+
+<div class="section">
+<button onclick="openP('rinku')">Daughter</button>
+<button onclick="openP('mukesh')">Son In Law</button>
+</div>
+</div>
+
+<!-- CHOTE LOG -->
+<div class="box">
+<div class="box-title">CHOTE LOG</div>
+
+<div class="section">
+<button onclick="openP('palak')">Palak</button>
+<button onclick="openP('kanu')">Kanu</button>
+<button onclick="openP('keshu')">Keshu</button>
+<button onclick="openP('dugoo')">Dugoo</button>
+<button onclick="openP('vishu')">Vishu</button>
+<button onclick="openP('lado')">Lado</button>
+</div>
+
+<div class="section">
+<button onclick="openP('khushi')">Khushi</button>
+<button onclick="openP('eati')">Eati</button>
+</div>
+</div>
+
+</div>
+
+<div class="thankyou">THANK YOU 🙏</div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="close" onclick="closeP()">✕</div>
+<div class="profile" id="content"></div>
+</div>
+
+<script>
+const data={
+geeta:["geeta.jpg","Geeta Bansal","Home Minister","“Love and care hold the family together”"],
+lalitesh:["lalitesh.jpg","Lalitesh Bansal","1st Son","“Responsibility builds legacy”"],
+jyoti:["jyoti.jpg","Jyoti Bansal","Daughter in Law","“Grace and strength”"],
+manish:["manish.jpg","Manish Kumar Bansal","2nd Son","“Hard work defines success”"],
+taruna:["taruna.jpg","Taruna Gupta","Daughter in Law","“Kind hearts make homes”"],
+lokesh:["lokesh.jpg","Lokesh Kumar Bansal","3rd Son","“Unity is power”"],
+sonali:["sonali.jpg","Sonali Bansal","Daughter in Law","“Love grows with respect”"],
+rinku:["rinku.jpg","Rinku Agarwal","Daughter","“A daughter is forever love”"],
+mukesh:["mukesh.jpg","Mukesh Agarwal","Son In Law","“Family first”"],
+
+palak:["palak.jpg","Palak Bansal","Daughter of Lalitesh","“Innocence with confidence”"],
+kanu:["krishna.jpg","Krishna Bansal","Son of Lalitesh","“Joy of the family”"],
+keshu:["dhruv.jpg","Dhruv Bansal ❤️","Son of Manish","“Dreamer. Creator.”"],
+dugoo:["tanmay.jpg","Tanmay Gupta","Son of Manish","“Smiles make memories”"],
+vishu:["vidit.jpg","Vidit Bansal","Son of Lokesh","“Calm mind, strong heart”"],
+lado:["riya.jpg","Riya Bansal","Daughter of Lokesh","“Love wrapped in laughter”"],
+khushi:["khushi.jpg","Khushi Agarwal","Daughter of Rinku","“Happiness in human form”"],
+eati:["nakshatra.jpg","Nakshatra Agarwal","Daughter of Rinku","“Star of the family”"]
+};
+
+function openP(x){
+document.getElementById("content").innerHTML=
+`<img src="${data[x][0]}">
+<div class="details">
+<h2>${data[x][1]}</h2>
+<p>${data[x][2]}</p>
+<p>${data[x][3]}</p>
+</div>`;
+document.getElementById("modal").style.display="flex";
+}
+function closeP(){
+document.getElementById("modal").style.display="none";
+}
+</script>
+
+</body>
+</html>
